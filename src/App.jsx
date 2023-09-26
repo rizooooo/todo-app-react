@@ -7,14 +7,14 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`https://dummyjson.com/posts?limit=3`);
+      const response = await fetch(`https://dummyjson.com/todos?limit=3`);
 
       const results = await response?.json();
 
       setTodos(
-        results?.posts?.map((item) => ({
+        results?.todos?.map((item) => ({
           id: item.id,
-          text: item.title,
+          text: item.todo,
         }))
       );
       // console.log(results, "@results");
